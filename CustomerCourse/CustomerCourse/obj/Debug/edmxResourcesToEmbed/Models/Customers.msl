@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CustomerModelStoreContainer" CdmEntityContainer="CustomerEntities">
+    <EntitySetMapping Name="客戶資料">
+      <EntityTypeMapping TypeName="CustomerModel.客戶資料">
+        <MappingFragment StoreEntitySet="客戶資料">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="客戶名稱" ColumnName="客戶名稱" />
+          <ScalarProperty Name="統一編號" ColumnName="統一編號" />
+          <ScalarProperty Name="電話" ColumnName="電話" />
+          <ScalarProperty Name="傳真" ColumnName="傳真" />
+          <ScalarProperty Name="地址" ColumnName="地址" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="客戶銀行資訊">
+      <EntityTypeMapping TypeName="CustomerModel.客戶銀行資訊">
+        <MappingFragment StoreEntitySet="客戶銀行資訊">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="客戶Id" ColumnName="客戶Id" />
+          <ScalarProperty Name="銀行名稱" ColumnName="銀行名稱" />
+          <ScalarProperty Name="銀行代碼" ColumnName="銀行代碼" />
+          <ScalarProperty Name="分行代碼" ColumnName="分行代碼" />
+          <ScalarProperty Name="帳戶名稱" ColumnName="帳戶名稱" />
+          <ScalarProperty Name="帳戶號碼" ColumnName="帳戶號碼" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="客戶聯絡人">
+      <EntityTypeMapping TypeName="CustomerModel.客戶聯絡人">
+        <MappingFragment StoreEntitySet="客戶聯絡人">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="客戶Id" ColumnName="客戶Id" />
+          <ScalarProperty Name="職稱" ColumnName="職稱" />
+          <ScalarProperty Name="姓名" ColumnName="姓名" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="手機" ColumnName="手機" />
+          <ScalarProperty Name="電話" ColumnName="電話" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
