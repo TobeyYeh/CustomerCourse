@@ -164,6 +164,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Customers.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Partial\客戶聯絡人.Partial.cs" />
+    <Compile Include="Models\Partial\客戶資料.Partial.cs" />
+    <Compile Include="Models\Partial\客戶銀行資訊Partial.cs" />
     <Compile Include="Models\客戶聯絡人.cs">
       <DependentUpon>Customers.tt</DependentUpon>
     </Compile>
