@@ -41,3 +41,4 @@ W:\保哥MVC\MVC5_Course\CustomerCourse\CustomerCourse\bin\zh-Hant\System.Web.Ht
 W:\保哥MVC\MVC5_Course\CustomerCourse\CustomerCourse\obj\Debug\CustomerCourse.csproj.CoreCompileInputs.cache
 W:\保哥MVC\MVC5_Course\CustomerCourse\CustomerCourse\obj\Debug\CustomerCourse.dll
 W:\保哥MVC\MVC5_Course\CustomerCourse\CustomerCourse\obj\Debug\CustomerCourse.pdb
+W:\保哥MVC\MVC5_Course\CustomerCourse\CustomerCourse\obj\Debug\CustomerCourse.csprojResolveAssemblyReference.cache
