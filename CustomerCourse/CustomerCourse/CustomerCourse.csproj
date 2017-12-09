@@ -129,6 +129,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Models\EFGeneratePartialClass.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EFGeneratePartialClass.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -165,23 +169,37 @@
       <DependentUpon>Customers.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\DataType\EmailAttribute.cs" />
+    <Compile Include="Models\DataType\PhoneAttribute.cs" />
+    <Compile Include="Models\EFGeneratePartialClass.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EFGeneratePartialClass.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Partial\客戶聯絡人.Partial.cs" />
     <Compile Include="Models\Partial\客戶資料.Partial.cs" />
     <Compile Include="Models\Partial\客戶銀行資訊Partial.cs" />
     <Compile Include="Models\客戶聯絡人.cs">
       <DependentUpon>Customers.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\客戶聯絡人.Partial.cs">
+      <DependentUpon>EFGeneratePartialClass.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\客戶資料.cs">
       <DependentUpon>Customers.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\客戶資料.Partial.cs">
+      <DependentUpon>EFGeneratePartialClass.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\客戶銀行資訊.cs">
       <DependentUpon>Customers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\客戶銀行資訊.Partial.cs">
+      <DependentUpon>EFGeneratePartialClass.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
-    <Content Include="packages - 複製.config" />
     <EntityDeploy Include="Models\Customers.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Customers.Designer.cs</LastGenOutput>
