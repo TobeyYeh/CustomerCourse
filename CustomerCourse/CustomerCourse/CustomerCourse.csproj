@@ -44,6 +44,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -129,9 +132,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Models\EFGeneratePartialClass.tt">
+    <Content Include="Models\IRepository.EF6.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EFGeneratePartialClass.cs</LastGenOutput>
+      <LastGenOutput>IRepository.EF6.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -148,6 +151,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CustomerDataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -170,31 +174,43 @@
     </Compile>
     <Compile Include="Models\DataType\EmailAttribute.cs" />
     <Compile Include="Models\DataType\PhoneAttribute.cs" />
-    <Compile Include="Models\EFGeneratePartialClass.cs">
+    <Compile Include="Models\EFRepository.cs">
+      <DependentUpon>IRepository.EF6.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EFUnitOfWork.cs">
+      <DependentUpon>IRepository.EF6.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IRepository.EF6.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EFGeneratePartialClass.tt</DependentUpon>
+      <DependentUpon>IRepository.EF6.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IUnitOfWork.cs">
+      <DependentUpon>IRepository.EF6.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Partial\客戶聯絡人.Partial.cs" />
     <Compile Include="Models\Partial\客戶資料.Partial.cs" />
     <Compile Include="Models\Partial\客戶銀行資訊Partial.cs" />
+    <Compile Include="Models\RepositoryHelper.cs">
+      <DependentUpon>IRepository.EF6.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\客戶聯絡人.cs">
       <DependentUpon>Customers.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\客戶聯絡人.Partial.cs">
-      <DependentUpon>EFGeneratePartialClass.tt</DependentUpon>
+    <Compile Include="Models\客戶聯絡人Repository.cs">
+      <DependentUpon>IRepository.EF6.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\客戶資料.cs">
       <DependentUpon>Customers.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\客戶資料.Partial.cs">
-      <DependentUpon>EFGeneratePartialClass.tt</DependentUpon>
+    <Compile Include="Models\客戶資料Repository.cs">
+      <DependentUpon>IRepository.EF6.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\客戶銀行資訊.cs">
       <DependentUpon>Customers.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\客戶銀行資訊.Partial.cs">
-      <DependentUpon>EFGeneratePartialClass.tt</DependentUpon>
+    <Compile Include="Models\客戶銀行資訊Repository.cs">
+      <DependentUpon>IRepository.EF6.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -223,6 +239,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
