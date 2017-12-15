@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CustomerCourse.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,11 +9,13 @@ namespace CustomerCourse.Controllers
 {
     public class BaseController : Controller
     {
-      
+        protected 客戶資料Repository CustDataRepo = RepositoryHelper.Get客戶資料Repository();
+        protected 客戶聯絡人Repository CustContactRepo = RepositoryHelper.Get客戶聯絡人Repository();
+        protected 客戶銀行資訊Repository CustBankRepo = RepositoryHelper.Get客戶銀行資訊Repository();
         // GET: Base
-        public ActionResult Index()
+        protected override void HandleUnknownAction(string actionName)
         {
-            return View();
+            this.Redirect("/").ExecuteResult(this.ControllerContext);
         }
     }
 }

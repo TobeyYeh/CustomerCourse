@@ -13,6 +13,8 @@
     <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="客戶銀行資訊" Relationship="Self.FK_客戶銀行資訊_客戶資料" FromRole="客戶資料" ToRole="客戶銀行資訊" />
     <NavigationProperty Name="客戶聯絡人" Relationship="Self.FK_客戶聯絡人_客戶資料" FromRole="客戶資料" ToRole="客戶聯絡人" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="客戶分類" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="客戶銀行資訊">
     <Key>
@@ -26,6 +28,7 @@
     <Property Name="帳戶名稱" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="帳戶號碼" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="客戶資料" Relationship="Self.FK_客戶銀行資訊_客戶資料" FromRole="客戶銀行資訊" ToRole="客戶資料" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityType Name="客戶聯絡人">
     <Key>
@@ -39,6 +42,7 @@
     <Property Name="手機" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="電話" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="客戶資料" Relationship="Self.FK_客戶聯絡人_客戶資料" FromRole="客戶聯絡人" ToRole="客戶資料" />
+    <Property Name="IsDeleted" Type="Boolean" />
   </EntityType>
   <Association Name="FK_客戶銀行資訊_客戶資料">
     <End Role="客戶資料" Type="Self.客戶資料" Multiplicity="1" />

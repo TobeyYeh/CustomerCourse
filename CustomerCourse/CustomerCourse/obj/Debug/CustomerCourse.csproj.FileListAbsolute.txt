@@ -42,3 +42,5 @@ W:\保哥MVC\MVC5_Course\CustomerCourse\CustomerCourse\obj\Debug\CustomerCourse.
 W:\保哥MVC\MVC5_Course\CustomerCourse\CustomerCourse\obj\Debug\CustomerCourse.dll
 W:\保哥MVC\MVC5_Course\CustomerCourse\CustomerCourse\obj\Debug\CustomerCourse.pdb
 W:\保哥MVC\MVC5_Course\CustomerCourse\CustomerCourse\obj\Debug\CustomerCourse.csprojResolveAssemblyReference.cache
+W:\保哥MVC\MVC5_Course\CustomerCourse\CustomerCourse\bin\AutoMapper.dll
+W:\保哥MVC\MVC5_Course\CustomerCourse\CustomerCourse\bin\AutoMapper.xml

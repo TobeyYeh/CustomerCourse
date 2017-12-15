@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace CustomerCourse.Controllers
 {
-    public class CustomerDataController : Controller
+    public class CustomerDataController : BaseController
     {
         CustomerEntities db = new CustomerEntities();
         // GET: CustomerData
@@ -20,6 +20,29 @@ namespace CustomerCourse.Controllers
             return View();
         }
 
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        public ActionResult Create(客戶資料 data)
+        {
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("Index");
+            }
+            return View(data);
+        }
+
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, 客戶資料 data)
+        {
+            if (ModelState.IsValid)
+            {
+
+                return RedirectToAction("Index");
+            }
+
+            return View(data);
+        }
 
     }
 }

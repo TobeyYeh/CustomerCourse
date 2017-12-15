@@ -4,6 +4,8 @@
     <EntitySetMapping Name="客戶資料">
       <EntityTypeMapping TypeName="CustomerModel.客戶資料">
         <MappingFragment StoreEntitySet="客戶資料">
+          <ScalarProperty Name="客戶分類" ColumnName="客戶分類" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="客戶名稱" ColumnName="客戶名稱" />
           <ScalarProperty Name="統一編號" ColumnName="統一編號" />
@@ -17,6 +19,7 @@
     <EntitySetMapping Name="客戶銀行資訊">
       <EntityTypeMapping TypeName="CustomerModel.客戶銀行資訊">
         <MappingFragment StoreEntitySet="客戶銀行資訊">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="客戶Id" ColumnName="客戶Id" />
           <ScalarProperty Name="銀行名稱" ColumnName="銀行名稱" />
@@ -30,6 +33,7 @@
     <EntitySetMapping Name="客戶聯絡人">
       <EntityTypeMapping TypeName="CustomerModel.客戶聯絡人">
         <MappingFragment StoreEntitySet="客戶聯絡人">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="客戶Id" ColumnName="客戶Id" />
           <ScalarProperty Name="職稱" ColumnName="職稱" />
