@@ -43,7 +43,7 @@ namespace CustomerCourse.Models
 
             if (UnitOfWork.Context.Entry(entity).State == EntityState.Detached)
             {
-                HandleDetached(entity);
+             
             }
 
 

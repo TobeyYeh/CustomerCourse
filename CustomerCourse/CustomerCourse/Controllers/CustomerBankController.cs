@@ -39,17 +39,20 @@ namespace CustomerCourse.Controllers
 
             if (ModelState.IsValid)
             {
-
+                CustBankRepo.Add(data);
                 return RedirectToAction("Index");
             }
 
             return View(data);
         }
 
-        public ActionResult Edit()
+        public ActionResult Edit(int id)
         {
-
-            return View();
+            var item = CustBankRepo.Find(id);
+          
+           
+            return View(item);
+          
         }
 
         [HttpPost]
@@ -58,7 +61,13 @@ namespace CustomerCourse.Controllers
         {
             if (ModelState.IsValid)
             {
-
+                var item = CustBankRepo.Find(id);
+                item.分行代碼 = data.分行代碼;
+                item.客戶資料 = data.客戶資料;
+                item.帳戶號碼 = data.帳戶號碼;
+                item.銀行代碼 = data.銀行代碼;
+                item.銀行名稱 = data.銀行名稱;
+                CustBankRepo.Update(data);
                 return RedirectToAction("Index");
             }
 
