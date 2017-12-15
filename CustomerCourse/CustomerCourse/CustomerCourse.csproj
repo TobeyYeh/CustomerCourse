@@ -152,6 +152,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CustContextController.cs" />
     <Compile Include="Controllers\CustomerBankController.cs" />
     <Compile Include="Controllers\CustomerDataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -173,8 +174,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Customers.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\DataType\EmailAttribute.cs" />
-    <Compile Include="Models\DataType\PhoneAttribute.cs" />
+    <Compile Include="Models\DataTypes\EmailAttribute.cs" />
+    <Compile Include="Models\DataTypes\PhoneAttribute.cs" />
     <Compile Include="Models\EFRepository.cs">
       <DependentUpon>IRepository.EF6.tt</DependentUpon>
     </Compile>
@@ -232,6 +233,12 @@
     <Content Include="Views\CustomerData\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\CustomerBank\Details.cshtml" />
+    <Content Include="Views\CustContext\Details.cshtml" />
+    <Content Include="Views\CustomerData\Details.cshtml" />
+    <Content Include="Views\CustContext\Create.cshtml" />
+    <Content Include="Views\CustomerBank\Edit.cshtml" />
+    <Content Include="Views\CustomerData\Edit.cshtml" />
+    <Content Include="Views\CustomerBank\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

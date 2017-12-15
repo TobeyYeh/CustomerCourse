@@ -18,9 +18,14 @@
                     <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("首頁", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav"></ul>
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("客戶資料", "Index", "CustomerData")</li>
+                    <li>@Html.ActionLink("客戶銀行資訊", "Index", "CustomerBank")</li>
+                </ul>
+
             </div>
         </div>
     </div>

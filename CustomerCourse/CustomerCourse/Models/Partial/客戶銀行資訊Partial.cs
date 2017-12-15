@@ -4,11 +4,12 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace CustomerCourse.Models.Partial
+namespace CustomerCourse.Models
 {
     [MetadataType(typeof(客戶銀行資訊MetaData))]
-    public partial class 客戶銀行資訊Partial
+    public partial class 客戶銀行資訊Partial 
     {
+      
     }
     public partial class 客戶銀行資訊MetaData
     {

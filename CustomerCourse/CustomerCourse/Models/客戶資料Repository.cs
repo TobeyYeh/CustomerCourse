@@ -26,16 +26,16 @@ namespace CustomerCourse.Models
             return this.All().Where(p => p.IsDeleted == false);
         }
 
-        /// <summary>
-        /// 關聯其他兩個資料表當新增自動補1
-        /// </summary>
-        /// <returns></returns>
-        public int Get客戶資料總數()
-        {
-            int Count = this.All().Count();
-            Count++;
-            return Count;
-        }
+        ///// <summary>
+        ///// 關聯其他兩個資料表當新增自動補1
+        ///// </summary>
+        ///// <returns></returns>
+        //public int Get客戶資料總數()
+        //{
+        //    int Count = this.All().Count();
+        //    Count++;
+        //    return Count;
+        //}
 
         public override void Add(客戶資料 entity)
         {

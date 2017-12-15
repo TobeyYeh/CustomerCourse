@@ -3,5 +3,12 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>客戶資料首頁</h2>
 
+<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("客戶資料新增", "Create", "CustomerData")</li>
+        <li>@Html.ActionLink("客戶清單明細", "Details", "CustomerData")</li>
+    </ul>
+
+</div>

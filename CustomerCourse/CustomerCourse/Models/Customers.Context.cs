@@ -28,5 +28,7 @@ namespace CustomerCourse.Models
         public virtual DbSet<客戶資料> 客戶資料 { get; set; }
         public virtual DbSet<客戶銀行資訊> 客戶銀行資訊 { get; set; }
         public virtual DbSet<客戶聯絡人> 客戶聯絡人 { get; set; }
+
+        public System.Data.Entity.DbSet<CustomerCourse.Models.客戶資料MetaData> 客戶資料MetaData { get; set; }
     }
 }

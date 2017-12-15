@@ -15,8 +15,11 @@ namespace CustomerCourse.Models
 		{
 			Context.SaveChanges();
 		}
-		
-		public bool LazyLoadingEnabled
+
+      
+
+
+        public bool LazyLoadingEnabled
 		{
 			get { return Context.Configuration.LazyLoadingEnabled; }
 			set { Context.Configuration.LazyLoadingEnabled = value; }

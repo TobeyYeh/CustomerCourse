@@ -11,12 +11,15 @@ namespace CustomerCourse.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class 客戶聯絡人
     {
         public int Id { get; set; }
         public int 客戶Id { get; set; }
+        [StringLength(1, ErrorMessage = "欄位長度不得大於 2個字元")]
         public string 職稱 { get; set; }
+        [StringLength(1, ErrorMessage = "欄位長度不得大於 1個字元")]
         public string 姓名 { get; set; }
         public string Email { get; set; }
         public string 手機 { get; set; }

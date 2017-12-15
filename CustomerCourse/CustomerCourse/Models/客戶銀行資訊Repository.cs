@@ -11,6 +11,11 @@ namespace CustomerCourse.Models
             return this.All().Where(p => p.IsDeleted == false);
         }
 
+        public 客戶銀行資訊 Find(int id)
+        {
+            return this.All().FirstOrDefault(p => p.Id == id);
+        }
+
         public override void Add(客戶銀行資訊 entity)
         {
             base.Add(entity);

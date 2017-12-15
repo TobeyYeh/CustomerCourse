@@ -12,6 +12,23 @@ namespace CustomerCourse.Controllers
         // GET: CustomerBank
         public ActionResult Index()
         {
+
+            //var dataTotal = CustBankRepo.getCustBankList();
+
+            //List<SelectListItem> items = new List<SelectListItem>();
+
+            //foreach (var item in dataTotal)
+            //{
+            //    items.Add(new SelectListItem { Text = item.客戶Id.ToString(), Value = item.客戶Id.ToString() });
+            //}
+
+            //ViewBag.getItem = items;
+            return View();
+        }
+
+        public ActionResult Create()
+        {
+
             return View();
         }
 
@@ -19,6 +36,7 @@ namespace CustomerCourse.Controllers
         //[ValidateAntiForgeryToken]
         public ActionResult Create(客戶銀行資訊 data)
         {
+
             if (ModelState.IsValid)
             {
 
@@ -49,12 +67,13 @@ namespace CustomerCourse.Controllers
 
         [HttpPost]
         //[ValidateAntiForgeryToken]
-        public ActionResult Deleted(int id, 客戶銀行資訊 data)
+        public ActionResult Delete(int id, 客戶銀行資訊 data)
         {
             if (ModelState.IsValid)
             {
-
-                return RedirectToAction("Index");
+                var item = CustBankRepo.Find(id);
+                CustBankRepo.Delete(item);
+                return RedirectToAction("Details");
             }
 
             return View(data);
@@ -64,7 +83,7 @@ namespace CustomerCourse.Controllers
         {
             var data = CustBankRepo.getCustBankList();
             ViewData.Model = data;
-            ViewBag.PageTitle = "客戶銀行清單";
+            ViewBag.PageTitle = "客戶銀行資訊";
             return View();
         }
     }

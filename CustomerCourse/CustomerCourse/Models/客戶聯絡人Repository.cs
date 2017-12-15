@@ -11,24 +11,33 @@ namespace CustomerCourse.Models
             return this.All().Where(p => p.IsDeleted == false);
         }
 
-        public IQueryable<客戶聯絡人> get客戶聯絡人清單(客戶聯絡人 entity)
+        public 客戶聯絡人 Find(int id)
         {
-            return this.All().Where(p => p.Email == entity.Email);
+            return this.All().FirstOrDefault(p => p.Id == id);
+        }
+
+        public IQueryable<客戶聯絡人> Email不重複(string Email)
+        {
+            return this.All().Where(p => p.Email == Email);
         }
 
         public override void Add(客戶聯絡人 entity)
         {
             base.Add(entity);
+            this.UnitOfWork.Commit();
         }
+
 
         public override void Update(客戶聯絡人 entity)
         {
             base.Update(entity);
+            this.UnitOfWork.Commit();
         }
 
         public override void Delete(客戶聯絡人 entity)
         {
             base.Delete(entity);
+            this.UnitOfWork.Commit();
         }
 
 

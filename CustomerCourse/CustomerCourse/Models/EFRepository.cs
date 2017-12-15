@@ -1,5 +1,6 @@
 using System;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Linq.Expressions;
 
@@ -39,8 +40,19 @@ namespace CustomerCourse.Models
 
         public virtual void Update(T entity)
         {
+
+            if (UnitOfWork.Context.Entry(entity).State == EntityState.Detached)
+            {
+                HandleDetached(entity);
+            }
+
+
             ObjectSet.Attach(entity);
+            UnitOfWork.Context.Entry(entity).State = EntityState.Modified;
+
         }
+
+      
 
         public virtual void Delete(T entity)
         {

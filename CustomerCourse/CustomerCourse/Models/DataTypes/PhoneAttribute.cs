@@ -7,13 +7,8 @@ using System.Web;
 
 namespace CustomerCourse.Models.DataType
 {
-    public partial class PhoneAttribute : DataTypeAttribute
-    {
-        public PhoneAttribute() : base(System.ComponentModel.DataAnnotations.DataType.Text)
-        {
-
-        }
-
+    public class PhoneAttribute : ValidationAttribute
+    { 
         public override bool IsValid(object value)
         {
             if (value == null)
@@ -21,13 +16,13 @@ namespace CustomerCourse.Models.DataType
                 return true;
             }
 
-            if (value is String)
+            if (Regex.IsMatch(value.ToString(), @"\d{4}-\d{6}"))
             {
-                return Regex.IsMatch(value.ToString(), @"\d{4}-\d{6}");
+                return true;
             }
             else
             {
-                return true;
+                return false;
             }
         }
     }
