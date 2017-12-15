@@ -174,8 +174,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Customers.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\DataTypes\EmailAttribute.cs" />
-    <Compile Include="Models\DataTypes\PhoneAttribute.cs" />
+    <Compile Include="Models\DataTypes\MobilePhoneAttribute.cs" />
     <Compile Include="Models\EFRepository.cs">
       <DependentUpon>IRepository.EF6.tt</DependentUpon>
     </Compile>
@@ -239,6 +238,12 @@
     <Content Include="Views\CustomerBank\Edit.cshtml" />
     <Content Include="Views\CustomerData\Edit.cshtml" />
     <Content Include="Views\CustomerBank\Index.cshtml" />
+    <Content Include="Views\CustContext\Index.cshtml" />
+    <Content Include="Views\CustomerBank\Create.cshtml" />
+    <Content Include="Views\CustomerData\List.cshtml" />
+    <Content Include="Views\CustomerBank\List.cshtml" />
+    <Content Include="Views\CustContext\List.cshtml" />
+    <Content Include="Views\CustContext\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

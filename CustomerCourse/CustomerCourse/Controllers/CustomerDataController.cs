@@ -26,6 +26,7 @@ namespace CustomerCourse.Controllers
         {
             if (ModelState.IsValid)
             {
+                data.IsDeleted = false;
                 CustDataRepo.Add(data);
                 return RedirectToAction("Index");
             }
@@ -58,21 +59,20 @@ namespace CustomerCourse.Controllers
                 item.統一編號 = data.統一編號;
                 item.電話 = data.電話;
 
-                CustDataRepo.Update(data);
+                CustDataRepo.UnitOfWork.Commit();
                 return RedirectToAction("Index");
             }
 
             return View(data);
         }
 
-        public ActionResult Details()
+        public ActionResult List()
         {
             var data = CustDataRepo.Get取得客戶資料明細();
             ViewData.Model = data;
             return View();
 
         }
-
         public ActionResult Delete(int id)
         {
             var item = CustDataRepo.Find(id);
@@ -80,5 +80,16 @@ namespace CustomerCourse.Controllers
             return RedirectToAction("Details");
         }
 
+
+        //public ActionResult Details()
+        //{
+        //    return View();
+        //}
+
+        public ActionResult Details(int id)
+        {
+            var data = CustDataRepo.Find(id);
+            return View(data);
+        }
     }
 }

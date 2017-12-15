@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CustomerCourse.Models.客戶銀行資訊>
+﻿@model CustomerCourse.Models.客戶銀行資訊
 
 @{
     ViewBag.Title = "Details";
@@ -6,64 +6,60 @@
 
 <h2>Details</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
+<div>
+    <h4>客戶銀行資訊</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
             @Html.DisplayNameFor(model => model.銀行名稱)
-        </th>
-        <th>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.銀行名稱)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.銀行代碼)
-        </th>
-        <th>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.銀行代碼)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.分行代碼)
-        </th>
-        <th>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.分行代碼)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.帳戶名稱)
-        </th>
-        <th>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.帳戶名稱)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.帳戶號碼)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsDeleted)
-        </th>
-        <th>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.帳戶號碼)
+        </dd>
+        <dt>
             @Html.DisplayNameFor(model => model.客戶資料.客戶名稱)
-        </th>
-        <th></th>
-    </tr>
+        </dt>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.銀行名稱)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.銀行代碼)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.分行代碼)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.帳戶名稱)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.帳戶號碼)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsDeleted)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.客戶資料.客戶名稱)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+        <dd>
+            @Html.DisplayFor(model => model.客戶資料.客戶名稱)
+        </dd>
 
-</table>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

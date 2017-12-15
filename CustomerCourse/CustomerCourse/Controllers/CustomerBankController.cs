@@ -9,26 +9,29 @@ namespace CustomerCourse.Controllers
 {
     public class CustomerBankController : BaseController
     {
+
+
         // GET: CustomerBank
         public ActionResult Index()
         {
-
-            //var dataTotal = CustBankRepo.getCustBankList();
-
-            //List<SelectListItem> items = new List<SelectListItem>();
-
-            //foreach (var item in dataTotal)
-            //{
-            //    items.Add(new SelectListItem { Text = item.客戶Id.ToString(), Value = item.客戶Id.ToString() });
-            //}
-
-            //ViewBag.getItem = items;
+            
             return View();
         }
 
         public ActionResult Create()
         {
+            var data = CustDataRepo.Get取得客戶資料明細();
+            List<SelectListItem> items = new List<SelectListItem>();
+            foreach (var item in data)
+            {
+                items.Add(new SelectListItem()
+                {
+                    Text = item.Id.ToString(),
+                    Value = item.Id.ToString()
 
+                });
+            }
+            TempData["ID"] = items;
             return View();
         }
 
@@ -39,20 +42,38 @@ namespace CustomerCourse.Controllers
 
             if (ModelState.IsValid)
             {
+                data.客戶Id = data.客戶Id;
+                data.IsDeleted = false;
                 CustBankRepo.Add(data);
-                return RedirectToAction("Index");
+                return RedirectToAction("List");
             }
+            //else
+            //{
+            //    var getData = CustDataRepo.Get取得客戶資料明細();
+            //    List<SelectListItem> items = new List<SelectListItem>();
+            //    foreach (var item in getData)
+            //    {
+            //        items.Add(new SelectListItem()
+            //        {
+            //            Text = item.Id.ToString(),
+            //            Value = item.Id.ToString()
 
-            return View(data);
+            //        });
+            //    }
+
+            //    TempData["ID"] = items;
+            //}
+
+            return View();
         }
 
         public ActionResult Edit(int id)
         {
             var item = CustBankRepo.Find(id);
-          
+
            
             return View(item);
-          
+
         }
 
         [HttpPost]
@@ -67,7 +88,7 @@ namespace CustomerCourse.Controllers
                 item.帳戶號碼 = data.帳戶號碼;
                 item.銀行代碼 = data.銀行代碼;
                 item.銀行名稱 = data.銀行名稱;
-                CustBankRepo.Update(data);
+                CustBankRepo.UnitOfWork.Commit();
                 return RedirectToAction("Index");
             }
 
@@ -88,12 +109,32 @@ namespace CustomerCourse.Controllers
             return View(data);
         }
 
-        public ActionResult Details()
+        public ActionResult List()
         {
+            var getlCustDetail = CustDataRepo.Get取得客戶資料明細();
+            List<SelectListItem> items = new List<SelectListItem>();
+            foreach (var item in getlCustDetail)
+            {
+                items.Add(new SelectListItem()
+                {
+                    Text = item.Id.ToString(),
+                    Value = item.Id.ToString()
+
+                });
+            }
+            TempData["ID"] = items;
+
             var data = CustBankRepo.getCustBankList();
             ViewData.Model = data;
             ViewBag.PageTitle = "客戶銀行資訊";
             return View();
         }
+
+        public ActionResult Details(int id)
+        {
+            var data = CustBankRepo.Find(id);
+            return View(data);
+        }
     }
+
 }

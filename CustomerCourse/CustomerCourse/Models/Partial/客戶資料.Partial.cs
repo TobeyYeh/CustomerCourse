@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CustomerCourse.Models.DataType;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -16,13 +17,13 @@ namespace CustomerCourse.Models
     {
         public int Id { get; set; }
         [Required]
-        [StringLength(10, ErrorMessage = "欄位長度不得大於 50個字元")]
+        [StringLength(50, ErrorMessage = "欄位長度不得大於 50個字元")]
         public string 客戶名稱 { get; set; }
         [Required]
         [StringLength(8, ErrorMessage = "欄位長度不得大於 8個字元")]
         public string 統一編號 { get; set; }
         [Required]
-        [PhoneAttribute(ErrorMessage = "手機驗證失敗")]
+        
         public string 電話 { get; set; }
         [Required]
         [StringLength(50, ErrorMessage = "欄位長度不得大於 50個字元")]

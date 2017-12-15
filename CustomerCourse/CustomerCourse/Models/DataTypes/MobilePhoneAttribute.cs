@@ -7,8 +7,8 @@ using System.Web;
 
 namespace CustomerCourse.Models.DataType
 {
-    public class PhoneAttribute : ValidationAttribute
-    { 
+    public class MobilePhoneAttribute : ValidationAttribute
+    {
         public override bool IsValid(object value)
         {
             if (value == null)

@@ -22,11 +22,7 @@ namespace CustomerCourse.Models
             this.UnitOfWork.Commit();
         }
 
-        public override void Update(客戶銀行資訊 entity)
-        {
-            base.Update(entity);
-            this.UnitOfWork.Commit();
-        }
+      
 
         public override void Delete(客戶銀行資訊 entity)
         {

@@ -38,22 +38,6 @@ namespace CustomerCourse.Models
             ObjectSet.Add(entity);
         }
 
-        public virtual void Update(T entity)
-        {
-
-            if (UnitOfWork.Context.Entry(entity).State == EntityState.Detached)
-            {
-             
-            }
-
-
-            ObjectSet.Attach(entity);
-            UnitOfWork.Context.Entry(entity).State = EntityState.Modified;
-
-        }
-
-      
-
         public virtual void Delete(T entity)
         {
             ObjectSet.Remove(entity);

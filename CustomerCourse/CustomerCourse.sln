@@ -5,6 +5,11 @@ VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerCourse", "CustomerCourse\CustomerCourse.csproj", "{C1B71A79-ACCD-4085-B106-B884B994671E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B4EC18AC-483D-40FA-B1BB-4AADDBD91122}"
+	ProjectSection(SolutionItems) = preProject
+		.a11yrc = .a11yrc
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
